@@ -1,5 +1,5 @@
 <!-- electronic section start -->
-<div class="fashion_section" xmlns:th="http://www.w3.org/1999/xhtml">
+<div class="fashion_section" xmlns:th="http://www.w3.org/1999/xhtml" th:if="${not #lists.isEmpty(productDTOs)}">
     <div id="electronic_main_slider" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -26,4 +26,29 @@
         </div>
     </div>
 </div>
+<div class="fashion_section" xmlns:th="http://www.w3.org/1999/xhtml" th:if="${#lists.isEmpty(productDTOs)}">
+    <div class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <h1 class="fashion_taital m-3">Products</h1>
+                    <div class="fashion_section_2">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="text-center">
+                                    <img width="200" src="/images/empty_item.svg"/>
+                                </div>
+                                <h3 class="text-center">
+                                    No Data Found!
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- electronic section end -->
