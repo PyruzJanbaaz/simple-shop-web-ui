@@ -1,45 +1,34 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout-error-page}">
 <head>
-    <base href="./">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>EGS - Shop</title>
-
 </head>
 <body>
-<th:block>
-    <div class="c-body">
-        <main class="c-main">
-            <div class="container-fluid">
-                <div class="fade-in">
-                    <div class="row justify-content-center">
-                        <div class="col-md-12">
-                            <div class="text-center" th:if="${exceptionDetail.code != 403}">
-                                <div th:if="${data == null || data.size() == 0}" class="text-center w-100 mb-4 text-white not-found ">
-                                    <i th:if="${exceptionDetail.code == 401}" class="ri-lock-2-line ri-4x text-danger"></i>
-                                    <i th:if="${exceptionDetail.code != 401}" class="ri-bug-2-line ri-4x text-danger"></i>
-                                    <span class="m-0 d-block text-danger" th:text="${exceptionDetail.message}"></span>
-                                    <span class="d-block" th:text="${exceptionDetail.description}"></span>
-                                </div>
-                            </div>
-
-                            <div class="text-center" th:if="${exceptionDetail.code == 403}">
-                                <div th:if="${data == null || data.size() == 0}" class="text-center w-100 mb-4 text-white not-found ">
-                                    <i class="ri-lock-2-line ri-4x text-danger"></i>
-                                    <span class="m-0 d-block font-weight-bold text-danger" th:text="${exceptionDetail.message}"></span>
-                                    <span>You have not <span class="text-danger">PERMISSION</span> for access this page!</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<th:block layout:fragment="content">
+    <div class="col-md-12 float-left">
+        <div class="text-center w-75 m-auto" th:if="${exceptionDetail.code != 403}">
+            <div th:if="${data == null || data.size() == 0}" class="text-center w-100 text-white not-found ">
+                <i th:if="${exceptionDetail.code == 401}" class="ri-lock-2-line ri-4x text-danger"></i>
+                <i th:if="${exceptionDetail.code != 401}" class="ri-bug-2-line ri-4x text-danger"></i>
+                <h2 class="mt-5 d-block font-weight-bold text-danger" th:text="${exceptionDetail.message}"></h2>
+                <span class="d-block text-dark" th:text="${exceptionDetail.description}"></span>
             </div>
-        </main>
+        </div>
+        <div class="text-center" th:if="${exceptionDetail.code == 403}">
+            <div th:if="${data == null || data.size() == 0}" class="text-center w-100 text-white not-found ">
+                <i class="ri-lock-2-line ri-4x text-danger"></i>
+                <span class="m-0 d-block font-weight-bold text-danger" th:text="${exceptionDetail.message}"></span>
+                <span>You have not <span class="text-danger">PERMISSION</span> for access this page!</span>
+            </div>
+        </div>
+        <div class="buynow_bt text-center mb-2">
+            <a class="float-left w-100" href="/">Home</a>
+        </div>
     </div>
+
 </th:block>
 </body>
 </html>
