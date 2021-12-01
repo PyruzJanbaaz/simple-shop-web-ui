@@ -1,0 +1,22 @@
+<div class="exception-container" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="text-center" th:if="${exceptionDetail.code != 403}">
+                <div th:if="${data == null || data.size() == 0}" class="text-center w-100 mb-4 text-white not-found ">
+                    <i th:if="${exceptionDetail.code == 401}" class="ri-lock-2-line ri-4x text-danger"></i>
+                    <i th:if="${exceptionDetail.code != 401}" class="ri-bug-2-line ri-4x text-danger"></i>
+                    <span class="m-0 d-block text-danger" th:text="${exceptionDetail.message}"></span>
+                    <span class="d-block" th:text="${exceptionDetail.description}"></span>
+                </div>
+            </div>
+
+            <div class="text-center" th:if="${exceptionDetail.code == 403}">
+                <div th:if="${data == null || data.size() == 0}" class="text-center w-100 mb-4 text-white not-found ">
+                    <i class="ri-lock-2-line ri-4x text-danger"></i>
+                    <span class="d-block m-0 font-weight-bold text-danger" th:text="${exceptionDetail.message}"></span>
+                    <span class="d-block">You have not <span class="text-danger">PERMISSION</span> for access this page!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

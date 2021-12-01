@@ -1,0 +1,110 @@
+<div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
+    <!-- banner bg main start -->
+    <div class="banner_bg_main">
+        <!-- logo section start -->
+        <div class="logo_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="logo"><a class="banner_taital" href="#">EGS SHOP</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- logo section end -->
+        <!-- header section start -->
+        <div class="header_section">
+            <div class="container">
+                <div class="containt_main">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">All Category
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a th:each="c:${categoryDTOs}" class="dropdown-item" href="#" th:text="${c.title}"></a>
+                        </div>
+                    </div>
+                    <div class="main">
+                        <!-- Another variation with a button -->
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <input type="text" name="title" class="form-control" placeholder="Title...">
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <input type="hidden" name="min-rate" class="sliderValue form-control" data-index="0" value="0">
+                                <input type="hidden" name="max-rate" class="sliderValue form-control" data-index="1" value="5">
+                                <label class="text-white m-0">
+                                    Rate:
+                                    <span class="sliderText" data-index="0">0</span>
+                                    To
+                                    <span class="sliderText" data-index="1">5</span>
+                                </label>
+                                <div id="range-slider"></div>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <input type="hidden" name="min-price" class="priceSliderValue form-control" data-index="0" value="0">
+                                <input type="hidden" name="max-price" class="priceSliderValue form-control" data-index="1" value="10000">
+                                <label class="text-white m-0">
+                                    Price:
+                                    <span class="priceSliderText" data-index="0">0</span>
+                                    To
+                                    <span class="priceSliderText" data-index="1">10000</span>
+                                </label>
+                                <div id="price-slider"></div>
+                            </div>
+                            <div class="col-md-1 text-center">
+                                <button class="btn btn-secondary btn-search-product" type="button" style="background-color: #f26522; border-color:#f26522 ">
+                                    Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header section end -->
+        <!-- banner section start -->
+        <div class="banner_section layout_padding">
+            <div class="container">
+                <div id="my_slider" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                                    <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                                    <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                                    <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- banner section end -->
+    </div>
+    <!-- banner bg main end -->
+</div>
