@@ -21,7 +21,7 @@ Open the pom.xml file for spring-aop configuration:
         <relativePath/> <!-- lookup parent from repository -->
       </parent>
       
-      and dpendencies:
+and dpendencies:
 
        <!-- SPRING -->
         <dependency>
